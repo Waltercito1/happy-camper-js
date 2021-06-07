@@ -5,20 +5,22 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>The Happy Camper</title>
+        <link rel="stylesheet" href="stylesheets/reset-styles.css">
         <link rel="stylesheet" href="stylesheets/index.css">
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Slabo+27px|Yesteryear'>
         <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'><link href="stylesheets/index.css">
+        <script src="https://kit.fontawesome.com/8e30af3496.js" crossorigin="anonymous"></script>
 
     </head>
     <body>
-        <!-- <h1>Welcome!</h1>
+        <h1>Welcome!</h1>
         <div id="button-container">
             <button id="button-load-template">Use a template list</button>
-            <button id="button-create-new">Create your packing list</button>
+            <button id="button-create-new">Create a new packing list</button>
         </div>
         <div id="list">
             <ul id="categories-list"></ul>
-        </div> -->
+        </div>
 
                 <!-- partial:index.partial.html -->
     <div class="conatiner">
@@ -33,100 +35,183 @@
         
             <div class=" card [ is-collapsed ] " id="categ-box-name">
                 <div class="card__inner [ js-expander ]">
-                <span>Card</span>
+                <span>Sleeping</span>
                 <i class="fa fa-folder-o"></i>
                 </div>
                 <div class="card__expander">
                 <i class="fa fa-close [ js-collapser ]"></i>
-                Expander
+                    <ul id="packingItem">
+                        <li id="item">
+                            <div class="list-flex-box" >
+                                <div class="icon-hover">Tent</div>
+                                <div class="icon-flex-box">
+                                    <div class="icon-spacing"><i class="fas fa-edit icon-hover"></i></div>
+                                    <div class="icon-spacing"><i class="far fa-trash-alt icon-hover-delete"></i></div>
+                                    <div class="icon-spacing"><i class="fas fa-check-square icon-hover"></i></div>
+                                </div>
+                            </div> 
+                        </li>
+                        <li id="item">Sleeping Bags</li>
+                        <li id="item">Hide a Mats</li>
+                        <li id="item">Bedding</li>
+                        <li id="item">Blankets</li>
+                        <li id="item">Pillows</li>
+                        <li id="item">Hammock</li>
+                        <li id="item">Cots</li>
+                    </ul>
                 </div>
             </div>
         
             <div class=" card [ is-collapsed ] ">
                 <div class="card__inner [ js-expander ]">
-                <span>Card</span>
+                <span>Bathroom </span>
                 <i class="fa fa-folder-o"></i>
                 </div>
                 <div class="card__expander">
                 <i class="fa fa-close [ js-collapser ]"></i>
-                Expander
+                    <ul id="packingItem">
+                        <li id="item">Wipes</li>
+                        <li id="item">Towels</li>
+                        <li id="item">Soap</li>
+                        <li id="item">Shampoo</li>
+                        <li id="item">Mirror</li>
+                        <li id="item">Nail clipper</li>
+                        <li id="item">First aid kit</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class=" card [ is-collapsed ] ">
+                <div class="card__inner [ js-expander ]">
+                    <span>Kitchen</span>
+                    <i class="fa fa-folder-o"></i>
+                </div>
+                <div class="card__expander">
+                    <i class="fa fa-close [ js-collapser ]"></i>
+                    <ul>
+                        <li id="item">Lighter</li>
+                        <li id="item">Kitchen supplies</li>
+                        <li id="item">Coffee</li>
+                        <li id="item">Coffee maker</li>
+                        <li id="item">Condiments</li>
+                        <li id="item">Plates</li>
+                        <li id="item">Paper Towels</li>
+                        <li id="item">Utensils</li>
+                        <li id="item">Flipper</li>
+                        <li id="item">Grill Gear</li>
+                        <li id="item">Knife</li>
+                        <li id="item">Cutting Board</li>
+                        <li id="item">Cups</li>
+                        <li id="item">Grill & Gas</li>
+                        <li id="item">Garbage Bags</li>
+                    </ul>
                 </div>
             </div>
         
             <div class=" card [ is-collapsed ] ">
                 <div class="card__inner [ js-expander ]">
-                <span>Card</span>
+                <span>Warm Clothes</span>
                 <i class="fa fa-folder-o"></i>
                 </div>
                 <div class="card__expander">
                 <i class="fa fa-close [ js-collapser ]"></i>
-                Expander
+                    <ul id="packingItem">
+                        <li id="item">Puffy jackets</li>
+                        <li id="item">Hats</li>
+                        <li id="item">Gloves</li>
+                    </ul>
                 </div>
             </div>
         
             <div class=" card [ is-collapsed ] ">
                 <div class="card__inner [ js-expander ]">
-                <span>Card</span>
+                <span>Clothes</span>
                 <i class="fa fa-folder-o"></i>
                 </div>
                 <div class="card__expander">
                 <i class="fa fa-close [ js-collapser ]"></i>
-                Expander
+                    <ul id="packingItem">
+                        <li id="item">Socks</li>
+                        <li id="item">Underwear</li>
+                        <li id="item">Pjs</li>
+                        <li id="item">Swimsuit</li>
+                        <li id="item">Sunglasses</li>
+                    </ul>
                 </div>
             </div>
         
             <div class=" card [ is-collapsed ] ">
                 <div class="card__inner [ js-expander ]">
-                <span>Card</span>
+                <span>Other Gear</span>
                 <i class="fa fa-folder-o"></i>
                 </div>
                 <div class="card__expander">
                 <i class="fa fa-close [ js-collapser ]"></i>
-                Expander
+                    <ul id="packingItem">
+                        <li id="item">Tools</li>
+                        <li id="item">Axe</li>
+                        <li id="item">Bug spray</li>
+                        <li id="item">Sunscreen</li>
+                        <li id="item">Jawbone</li>
+                        <li id="item">Lantern</li>
+                        <li id="item">Flashlight</li>
+                        <li id="item">Grill basket</li>
+                        <li id="item">Bungee cords</li>
+                        <li id="item">Converter</li>
+                        <li id="item">Camping chairs</li>
+                    </ul>
                 </div>
             </div>
         
             <div class=" card [ is-collapsed ] ">
                 <div class="card__inner [ js-expander ]">
-                <span>Card</span>
+                <span>Base camp</span>
                 <i class="fa fa-folder-o"></i>
                 </div>
                 <div class="card__expander">
                 <i class="fa fa-close [ js-collapser ]"></i>
-                Expander
+                    <ul id="packingItem">
+                        <li id="item">Dish soap and sponge</li>
+                        <li id="item">Tablecloth</li>
+                        <li id="item">Foldable table</li>
+                    </ul>
                 </div>
             </div>
         
             <div class=" card [ is-collapsed ] ">
                 <div class="card__inner [ js-expander ]">
-                <span>Card</span>
+                <span>Food Sugestions</span>
                 <i class="fa fa-folder-o"></i>
                 </div>
                 <div class="card__expander">
                 <i class="fa fa-close [ js-collapser ]"></i>
-                Expander
+                    <ul id="packingItem">
+                        <li id="item">Eggs</li>
+                        <li id="item">Pickles</li>
+                        <li id="item">Cucumbers</li>
+                        <li id="item">Tomatoes</li>
+                        <li id="item">Veggies</li>
+                        <li id="item">Bacon</li>
+                        <li id="item">Tuna Salad</li>
+                        <li id="item">Naan</li>
+                        <li id="item">Hummus</li>
+                    </ul>
                 </div>
             </div>
         
             <div class=" card [ is-collapsed ] ">
                 <div class="card__inner [ js-expander ]">
-                <span>Card</span>
+                <span>Beverages</span>
                 <i class="fa fa-folder-o"></i>
                 </div>
                 <div class="card__expander">
                 <i class="fa fa-close [ js-collapser ]"></i>
-                Expander
-                </div>
-            </div>
-        
-            <div class=" card [ is-collapsed ] ">
-                <div class="card__inner [ js-expander ]">
-                <span>Card</span>
-                <i class="fa fa-folder-o"></i>
-                </div>
-                <div class="card__expander">
-                <i class="fa fa-close [ js-collapser ]"></i>
-                Expander
+                    <ul id="packingItem">
+                        <li id="item">Drinking Water</li>
+                        <li id="item">Beer</li>
+                        <li id="item">Bourbon</li>
+                        <li id="item">Mixers</li>
+                    </ul>
                 </div>
             </div>
         

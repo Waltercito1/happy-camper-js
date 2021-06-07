@@ -1,4 +1,5 @@
-@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+/* @charset "UTF-8"; */
 
 html {
     background: rgba(0, 128, 0, 0.3);
@@ -11,6 +12,47 @@ body {
     padding: 1rem 1rem 2rem 1rem;
 }
 
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li {
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+  }
+
+.list-flex-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.icon-flex-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.icon-spacing {
+    padding: 0px 6px 0px 6px;
+}
+
+.icon-hover:hover {
+    color: #1abc9c;
+}
+
+.icon-hover-delete:hover {
+    color: red;
+}
+
+.fa-check-square {
+    size: 25px;
+}
+
 /* **** */
 
 * {
@@ -19,7 +61,8 @@ body {
 
 body {
   background: #eceef1;
-  font-family: "Slabo 27px", serif;
+  /* font-family: "Slabo 27px", serif; */
+  font-family: "fa5-proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
   color: #333a45;
 }
 
@@ -83,7 +126,7 @@ body {
   background-color: #949fb0;
   color: #eceef1;
   font-size: 1.5em;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   text-align: center;
   transition: all 0.2s ease-in-out;
 }
@@ -95,74 +138,77 @@ body {
   margin-top: 0.25em;
 }
 .card__expander {
-  transition: all 0.2s ease-in-out;
-  background-color: #333a45;
-  width: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
-  color: #eceef1;
-  font-size: 1.5em;
+    transition: all 0.2s ease-in-out;
+    background-color: #333a45;
+    width: 100%;
+    position: relative;
+    /* display: flex; */
+    /* justify-content: center; */
+    align-items: center;
+    /* text-transform: uppercase; */
+    color: #00040a;
+    font-size: 1em;
+    padding: 25px 10px 10px 10px;
+    box-sizing: border-box;
 }
 .card__expander .fa {
-  font-size: 0.75em;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
+    font-size: 0.75em;
+    color: seashell;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
 }
 .card__expander .fa:hover {
-  opacity: 0.9;
+    opacity: 0.9;
 }
 .card.is-collapsed .card__inner:after {
-  content: "";
-  opacity: 0;
+    content: "";
+    opacity: 0;
 }
 .card.is-collapsed .card__expander {
-  max-height: 0;
-  min-height: 0;
-  overflow: hidden;
-  margin-top: 0;
-  opacity: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    margin-top: 0;
+    opacity: 0;
 }
 .card.is-expanded .card__inner {
-  background-color: #1abc9c;
+    background-color: #1abc9c;
 }
 .card.is-expanded .card__inner:after {
-  content: "";
-  opacity: 1;
-  display: block;
-  height: 0;
-  width: 0;
-  position: absolute;
-  bottom: -30px;
-  left: calc(50% - 15px);
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 15px solid #333a45;
+    content: "";
+    opacity: 1;
+    display: block;
+    height: 0;
+    width: 0;
+    position: absolute;
+    bottom: -30px;
+    left: calc(50% - 15px);
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #333a45;
 }
 .card.is-expanded .card__inner .fa:before {
-  content: "";
+    content: "";
 }
 .card.is-expanded .card__expander {
-  max-height: 1000px;
-  min-height: 200px;
-  overflow: visible;
-  margin-top: 30px;
-  opacity: 1;
+    max-height: 1000px;
+    min-height: 200px;
+    overflow: visible;
+    margin-top: 30px;
+    opacity: 1;
 }
 .card.is-expanded:hover .card__inner {
-  transform: scale(1);
+    transform: scale(1);
 }
 .card.is-inactive .card__inner {
-  pointer-events: none;
-  opacity: 0.5;
+    pointer-events: none;
+    opacity: 0.5;
 }
 .card.is-inactive:hover .card__inner {
-  background-color: #949fb0;
-  transform: scale(1);
+    background-color: #949fb0;
+    transform: scale(1);
 }
 
 @media screen and (min-width: 992px) {
