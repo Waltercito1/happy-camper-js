@@ -1,5 +1,5 @@
 class List {
     static all = []
 
-    constructor({title, })
+    // constructor({title})
 }
