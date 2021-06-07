@@ -24,5 +24,9 @@ class Category {
         return this.findByName(categoryObj.name) || new Category(categoryObj)
     }
 
+    renderCategory() {
+        const span = document.createElement("span")
+    }
+
     
 }
