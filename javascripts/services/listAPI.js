@@ -2,7 +2,17 @@ class ListApi {
     static fetchLists() {
         fetch('http://localhost:3000/lists')
         .then(resp => resp.json())
-        .then(json => {debugger})
+        .then(json => {
+            let list = List.findOrCreateBy(json[0])
+            json[0].categories.forEach(cat => {
+                let category = Category.findOrCreateBy(cat)
+                cat.items.forEach(item => {
+                    Item.findOrCreateBy({...item, category})
+                })
+            })
+            debugger
+            list.render()
+        })
 
         .catch(this.handleError)
     }
