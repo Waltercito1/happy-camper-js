@@ -26,6 +26,13 @@ class Category {
 
     renderCategory() {
         const span = document.createElement("span")
+        const a = document.createElement("a")
+        a.id = `category-${this.id}`
+        a.innerText = this.name
+        a.href = "#"
+        // a.addEventListener("click", this.renderItems)
+        span.appendChild(a)
+        categoryName().appendChild(span)
     }
 
     
