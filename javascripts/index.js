@@ -5,25 +5,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // CategoryApi.fetchCategories()
     // ItemApi.fetchItems()
-    // buttonNewTempl().addEventListener("click", displayForm)
+    // buttonNewTempl().addEventListener("click", displayEmptyCatTab)
 })
 
-const handleLoadTemplate = () => {
-    const span = document.createElement('span')
-    span.className = "category-name"
-    span.innerHTML = "Bathroom"
-    cardInner().appendChild(span)
+// const mainCardsDiv = document.getElementsByClassName("cards")
+const mainCardsDiv = () => document.getElementsByClassName("cards")
+const cardInner = () => document.querySelector(".card__inner")
+const cardExpander = () => document.querySelector(".card__expander")
 
+const handleLoadTemplate = () => {
+    Category.all.forEach(catName => {
+        const categTab = document.createElement('div')
+        debugger
+        categTab.innerHTML = `
+        <div class=" card [ is-collapsed ] ">
+            <div class="card__inner [ js-expander ]">
+                <span>${catName.name}</span>
+            <i class="fa fa-folder-o"></i>
+            </div>
+            <div class="card__expander">
+            <i class="fa fa-close [ js-collapser ]"></i>
+                <ul class="packingItem">
+                    <li id="item">Wipes</li>
+                </ul>
+            </div>
+        </div>
+        `
+        mainCardsDiv().appendChild(categTab)
+    })
+    
     addItems()
 }
 
-const cardInner = () => document.querySelector(".card__inner")
-const cardExpander = () => document.querySelector(".card__expander")
+// const span = document.createElement('span')
+// span.className = "category-name"
+// span.innerHTML = `${catName.name}`
+// cardInner().appendChild(span)
+
+const addItems = () => {
+    const ul = document.createElement('ul')
+    ul.class = 'packing-item'
+    const li = document.createElement('li')
+    li.class = 'item'
+    li.innerHTML = "Wipes"
+    cardExpander().appendChild(ul)
+    ul.append(li)
+}
 
 /* <div class="card__expander">
     <i class="fa fa-close [ js-collapser ]"></i>
         <ul class="packingItem">
-            <li id="item">
+            <li class="item">
                 <div class="list-flex-box" >
                     <div class="icon-hover">Tent</div>
                     <div class="icon-flex-box">
@@ -44,12 +76,3 @@ const cardExpander = () => document.querySelector(".card__expander")
     </div>
 </div> */
 
-const addItems = () => {
-    const ul = document.createElement('ul')
-    ul.class = 'packing-item'
-    const li = document.createElement('li')
-    li.class = 'item'
-    li.innerHTML = "Wipes"
-    cardExpander().appendChild(ul)
-    ul.append(li)
-}
