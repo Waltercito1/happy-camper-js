@@ -14,7 +14,7 @@ class Item {
     }
 
     static findById(id) {
-        return this.all.find(item => item.id ===id)
+        return this.all.find(item => item.id === id)
     }
 
     static findOrCreateBy(itemObj) {

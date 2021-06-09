@@ -1,9 +1,9 @@
 class Category {
     static all = []
 
-    constructor({name, id}) {
+    constructor({name, id, list}) {
         this.name = name
-        // this.list_id = list.id
+        this.list_id = list.id
         this.id = id
         Category.all.push(this)
     }
@@ -24,16 +24,16 @@ class Category {
         return this.findByName(categoryObj.name) || new Category(categoryObj)
     }
 
-    // renderCategory() {
-    //     const span = document.createElement("span")
-    //     const a = document.createElement("a")
-    //     a.id = `category-${this.id}`
-    //     a.innerText = this.name
-    //     a.href = "#"
-    //     // a.addEventListener("click", this.renderItems)
-    //     span.appendChild(a)
-    //     categoryName().appendChild(span)
-    // }
+    renderCategory() {
+        const span = document.createElement("span")
+        const a = document.createElement("a")
+        a.id = `category-${this.id}`
+        a.innerText = this.name
+        a.href = "#"
+        // a.addEventListener("click", this.renderItems)
+        span.appendChild(a)
+        categoryName().appendChild(span)
+    }
 
     
 }

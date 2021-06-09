@@ -23,15 +23,4 @@ class List {
          return this.findByName(listObj.title) || new List(listObj)
     }
 
-    render() {
-        const span = document.createElement("span")
-        const a = document.createElement("a")
-        a.id = `category-${this.id}`
-        a.innerText = this.name
-        a.href = "#"
-        // a.addEventListener("click", this.renderItems)
-        span.appendChild(a)
-        categoryName().appendChild(span)
-    }
-
 }
