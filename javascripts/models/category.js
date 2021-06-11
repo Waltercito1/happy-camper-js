@@ -37,6 +37,7 @@ class Category {
         items.forEach(item => {
             const li = document.createElement('li')
             li.class = 'item'
+            li.id = `item-${item.id}`
             li.innerHTML = `
             <div class="list-flex-box" >
                 <div class="icon-hover">${item.name}</div>
@@ -50,5 +51,7 @@ class Category {
             const categoryDiv = document.querySelector(`#tab-${item.category_id} .card__expander`)
             ul.appendChild(li)
             categoryDiv.appendChild(ul)
+            //debugger
+            document.querySelector(`#tab-${item.category_id} .card__expander #item-${item.id} .fa-trash-alt`).addEventListener("click", ItemApi.handleDelete)
         })}
     }

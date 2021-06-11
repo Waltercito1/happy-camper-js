@@ -16,4 +16,8 @@ class ItemApi {
         }, 5000)
     }
 
+    static handleDelete(e) {
+        debugger
+    }
+
 }
