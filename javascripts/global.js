@@ -4,4 +4,8 @@ const buttonShowTempl = () => document.getElementById("button-load-template")
 const buttonNewTempl = () => document.getElementById("button-create-new")
 const ul = () => document.getElementById("packingItem")
 
+const mainCardsDiv = () => document.querySelector(".cards")
+const cardInner = () => document.querySelector(".card__inner")
+const cardExpander = () => document.querySelector(".card__expander")
+
 

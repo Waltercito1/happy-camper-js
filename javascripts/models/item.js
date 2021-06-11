@@ -4,7 +4,7 @@ class Item {
     constructor({name, packed, category, id}) {
         this.name = name
         this.packed = packed
-        this.categroy_id = category.id
+        this.category_id = category.id
         this.id = id
         Item.all.push(this)
     }
@@ -27,4 +27,6 @@ class Item {
         currentItem.packed = packed
         return currentItem
     }
+
+    
 }
