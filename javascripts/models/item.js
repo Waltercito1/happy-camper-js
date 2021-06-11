@@ -27,6 +27,4 @@ class Item {
         currentItem.packed = packed
         return currentItem
     }
-
-    
 }

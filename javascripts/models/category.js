@@ -24,19 +24,7 @@ class Category {
         return this.findByName(categoryObj.name) || new Category(categoryObj)
     }
 
-    // renderCategory() {
-    //     const span = document.createElement("span")
-    //     const a = document.createElement("a")
-    //     a.id = `category-${this.id}`
-    //     a.innerText = this.name
-    //     a.href = "#"
-    //     // a.addEventListener("click", this.renderItems)
-    //     span.appendChild(a)
-    //     categoryName().appendChild(span)
-    // }
-
     findItems() {
-        
         // return Item.all.filter(function(item) { item.category_id === this.id })
         return Item.all.filter(item => this.id === item.category_id)
     }

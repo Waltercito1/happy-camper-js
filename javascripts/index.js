@@ -19,9 +19,7 @@ const handleLoadTemplate = () => {
             <i class="fa fa-folder-o"></i>
             `
             document.querySelector(`#tab-${i} .card__inner`).appendChild(span)
-            
             catObj.addItems()
-            
             i++
         })
     }
@@ -48,37 +46,3 @@ const handleLoadTemplate = () => {
 //     })
 //     addItems()
 // }
-
-// const addItems = () => {
-//     const ul = document.createElement('ul')
-//     ul.class = 'packing-item'
-//     const li = document.createElement('li')
-//     li.class = 'item'
-//     li.innerHTML = "Wipes"
-//     cardExpander().appendChild(ul)
-//     ul.append(li)
-// }
-
-/* <div class=" card [ is-collapsed ] ">
-    <div class="card__inner [ js-expander ]">
-    <!-- <span>Sleeping</span> -->
-    <i class="fa fa-folder-o"></i>
-    </div>
-    <div class="card__expander">
-        <i class="fa fa-close [ js-collapser ]"></i>
-            <ul class="packingItem">
-                <li class="item">
-                    <div class="list-flex-box" >
-                        <div class="icon-hover">Tent</div>
-                        <div class="icon-flex-box">
-                            <div class="icon-spacing"><i class="fas fa-edit icon-hover"></i></div>
-                            <div class="icon-spacing"><i class="far fa-trash-alt icon-hover-delete"></i></div>
-                            <div class="icon-spacing"><i class="fas fa-check-square icon-hover"></i></div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div> */
-
