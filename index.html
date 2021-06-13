@@ -14,6 +14,7 @@
     </head>
     <body class="bgimg-page-wrapper">
         <div id="button-container">
+            <button class="modal-btn">Modal</button>
             <button class="main-button" id="button-load-template">Use a template list</button>
             <button class="main-button" id="button-create-new">Create a new packing list</button>
         </div>
@@ -128,6 +129,19 @@
 
             </div>
         </div>
+
+        <div class="modal-bg">
+            <div class="modal">
+                <h1>Enter your user-name:</h1>
+                <label for="user_name"></label>
+                <input type="text" placeholder="user name">
+                <h2>Give your List a Name:</h2>
+                <label for="name"></label>
+                <input type="text" placeholder="list name">
+                <button>Create</button>
+                <span class="modal-close">x</span>
+            </div>
+        </div>        
         <!-- partial -->
 
         <script src="javascripts/global.js"></script>

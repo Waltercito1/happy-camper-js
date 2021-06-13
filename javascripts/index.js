@@ -2,7 +2,12 @@
 document.addEventListener("DOMContentLoaded", () => {
     ListApi.fetchLists()
     buttonShowTempl().addEventListener("click", handleLoadTemplate)
-
+    // modalBtn.addEventListener('click', function(){
+    //     modalBg.classList.add('bg-active')
+    // })
+    // modalClose.addEventListener('click', function(){
+    //     modalBg.classList.remove('bg-active')
+    // })
     // CategoryApi.fetchCategories()
     // ItemApi.fetchItems()
     // buttonNewTempl().addEventListener("click", displayEmptyCatTab)
@@ -21,8 +26,17 @@ const handleLoadTemplate = () => {
             catObj.addItems()
             i++
         })
+        handleModal()
     }
+}
 
+const handleModal = (categories) => {
+    modalBg.classList.add('bg-active')
+    modalClose.addEventListener('click', handleCloseModal)
+}
+
+const handleCloseModal = () => {
+    modalBg.classList.remove('bg-active')
 }
 
 // const handleLoadTemplate = () => {
