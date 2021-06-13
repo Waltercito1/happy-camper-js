@@ -46,6 +46,10 @@ ul {
     size: 25px;
 }
 
+.fa-check-square.checked {
+    color: #1abc9c;
+}
+
 #flash {
     background-color: red;
 }

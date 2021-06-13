@@ -3,6 +3,7 @@ class ListApi {
         fetch('http://localhost:3000/lists')
         .then(resp => resp.json())
         .then(json => {
+            //debugger
             let list = List.findOrCreateBy(json[0])
             json[0].categories.forEach(cat => {
                 let category = Category.findOrCreateBy({...cat, list})
@@ -10,7 +11,6 @@ class ListApi {
                     Item.findOrCreateBy({...item, category})
                 })
             })
-            // debugger
             // list.render()
         })
 

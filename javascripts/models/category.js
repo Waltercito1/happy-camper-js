@@ -38,16 +38,29 @@ class Category {
             const li = document.createElement('li')
             li.class = 'item'
             li.id = `item-${item.id}`
-            li.innerHTML = `
-            <div class="list-flex-box" >
+            if (item.packed === true) {    
+                li.innerHTML = `
+                <div class="list-flex-box" >
                 <div class="icon-hover">${item.name}</div>
                 <div class="icon-flex-box">
-                    <div class="icon-spacing"><i class="fas fa-edit icon-hover"></i></div>
-                    <div class="icon-spacing"><i class="far fa-trash-alt icon-hover-delete"></i></div>
-                    <div class="icon-spacing"><i class="fas fa-check-square icon-hover"></i></div>
+                <div class="icon-spacing"><i class="fas fa-edit icon-hover"></i></div>
+                <div class="icon-spacing"><i class="far fa-trash-alt icon-hover-delete"></i></div>
+                <div class="icon-spacing"><i class="fas fa-check-square checked icon-hover"></i></div>
                 </div>
-            </div>
-            `            
+                </div>
+                `            
+            } else {
+                li.innerHTML = `
+                <div class="list-flex-box" >
+                <div class="icon-hover">${item.name}</div>
+                <div class="icon-flex-box">
+                <div class="icon-spacing"><i class="fas fa-edit icon-hover"></i></div>
+                <div class="icon-spacing"><i class="far fa-trash-alt icon-hover-delete"></i></div>
+                <div class="icon-spacing"><i class="fas fa-check-square icon-hover"></i></div>
+                </div>
+                </div>
+                `
+            }
             const categoryDiv = document.querySelector(`#tab-${item.category_id} .card__expander`)
             ul.appendChild(li)
             categoryDiv.appendChild(ul)
