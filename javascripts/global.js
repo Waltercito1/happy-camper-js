@@ -10,3 +10,4 @@ const cardExpander = () => document.querySelector(".card__expander")
 
 const modalBg = () => document.querySelector('.modal-bg')
 const modalClose = () => document.querySelector('.modal-close')
+const buttonCreateList = () => document.querySelector('.create-btn')

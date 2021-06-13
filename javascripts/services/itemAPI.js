@@ -1,6 +1,9 @@
 class ItemApi {
+
+    static baseUrl = `${baseUrl}/items`
+
     static fetchItems() {
-        fetch('http://localhost:3000/items')
+        fetch(this.baseUrl)
         .then(resp => resp.json())
         .then(resp => {debugger})
 
@@ -17,6 +20,10 @@ class ItemApi {
     }
 
     static handleDelete(e) {
+        debugger
+    }
+
+    static handleUpdate(e) {
         debugger
     }
 

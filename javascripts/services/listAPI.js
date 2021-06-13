@@ -1,6 +1,9 @@
 class ListApi {
+
+    static baseUrl = `${baseUrl}/lists`
+
     static fetchLists() {
-        fetch('http://localhost:3000/lists')
+        fetch(this.baseUrl)
         .then(resp => resp.json())
         .then(json => {
             //debugger
@@ -24,6 +27,14 @@ class ListApi {
             flash().innerText = ""
             flash().classList.add("hide")
         }, 5000)
+    }
+
+    static createNewList(e) {
+        e.preventDefault()
+        const data = {
+
+        }
+        debugger
     }
 
 }

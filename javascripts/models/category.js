@@ -25,7 +25,6 @@ class Category {
     }
 
     findItems() {
-        // return Item.all.filter(function(item) { item.category_id === this.id })
         return Item.all.filter(item => this.id === item.category_id)
     }
 
@@ -64,7 +63,7 @@ class Category {
             const categoryDiv = document.querySelector(`#tab-${item.category_id} .card__expander`)
             ul.appendChild(li)
             categoryDiv.appendChild(ul)
-            //debugger
             document.querySelector(`#tab-${item.category_id} .card__expander #item-${item.id} .fa-trash-alt`).addEventListener("click", ItemApi.handleDelete)
+            document.querySelector(`#tab-${item.category_id} .card__expander #item-${item.id} .fa-edit`).addEventListener("click", ItemApi.handleUpdate)
         })}
     }
