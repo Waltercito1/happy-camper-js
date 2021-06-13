@@ -31,12 +31,12 @@ const handleLoadTemplate = () => {
 }
 
 const handleModal = (categories) => {
-    modalBg.classList.add('bg-active')
-    modalClose.addEventListener('click', handleCloseModal)
+    modalBg().classList.add('bg-active')
+    modalClose().addEventListener('click', handleCloseModal)
 }
 
 const handleCloseModal = () => {
-    modalBg.classList.remove('bg-active')
+    modalBg().classList.remove('bg-active')
 }
 
 // const handleLoadTemplate = () => {

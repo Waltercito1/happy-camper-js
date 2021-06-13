@@ -8,6 +8,5 @@ const mainCardsDiv = () => document.querySelector(".cards")
 const cardInner = () => document.querySelector(".card__inner")
 const cardExpander = () => document.querySelector(".card__expander")
 
-const modalBtn = document.querySelector('.modal-btn')
-const modalBg = document.querySelector('.modal-bg')
-const modalClose = document.querySelector('.modal-close')
+const modalBg = () => document.querySelector('.modal-bg')
+const modalClose = () => document.querySelector('.modal-close')
