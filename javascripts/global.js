@@ -1,7 +1,8 @@
 const baseUrl = "http://localhost:3000"
-const buttonContainer = () => document.getElementById("button-container")
-const buttonShowTempl = () => document.getElementById("button-load-template")
-const buttonNewTempl = () => document.getElementById("button-create-new")
+// const buttonContainer = () => document.getElementById("button-container")
+// const buttonShowTempl = () => document.getElementById("button-load-template")
+const buttonShowTempl = () => document.querySelector("#template")
+// const buttonNewTempl = () => document.getElementById("button-create-new")
 const ul = () => document.getElementById("packingItem")
 
 const mainCardsDiv = () => document.querySelector(".cards")

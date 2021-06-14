@@ -12,121 +12,142 @@
         <script src="https://kit.fontawesome.com/8e30af3496.js" crossorigin="anonymous"></script>
 
     </head>
-    <body class="bgimg-page-wrapper">
-        <div id="button-container">
+    <body>
+        <div id="main">
+            <div class="navbar">
+                <div class="navbar-list">
+                    <a href="#" id="logo-img" class="navbar-link"><img src="stylesheets/images/camping-logo.png" alt="Happy Camper's logo"></a>
+                    <a href="#home" id="home" class="navbar-link">Home</a>
+                    <a href="#lsit-template" id="template" class="navbar-link">Satrt with a template list</a>
+                    <a href="#create-new-list" id="new-list" class="navbar-link">Create a new packing list</a>
+                    <a href="#about" id="about" class="navbar-link">About</a>
+                </div>
+            </div>
+        <!-- <div id="button-container">
             <button class="main-button" id="button-load-template">Use a template list</button>
             <button class="main-button" id="button-create-new">Create a new packing list</button>
-        </div>
+        </div> -->
         <div id="list">
             <ul id="categories-list"></ul>
         </div>
         <div id="flash" class="hide"></div>
+        <div id="how-to" class="section">
+            <h1 id="how-to-title">How To Use This App</h1>
+            <p>Hello and welcome. Please use one of the links in the navigation bar to either start a packing list 
+                from a template, or creating your own. </p> 
+                <p> If you decide to give the template list a try, you will be 
+                able to remove or edit the names of the items as well as adding new ones. I hope you enjoy using this 
+                app.
+            </p>
+        </div>
                 <!-- partial:index.partial.html -->
         <div class="conatiner">
             <div class="wrapper">
             
-            <div class="header">
-                <h1 class="header__title">The Happy Camper List</h1>
-                <h2 class="header__subtitle">helps you make sure you packed it!</h2>
-            </div>
-            
-                <div class="cards">
+                <div class="header">
+                    <h1 class="header__title">The Happy Camper List</h1>
+                    <h2 class="header__subtitle">helps you make sure you packed it!</h2>
+                </div>
+                
+                    <div class="cards">
 
-                    <div class=" card [ is-collapsed ] " id="tab-1">
-                        <div class="card__inner [ js-expander ]">
+                        <div class=" card [ is-collapsed ] " id="tab-1">
+                            <div class="card__inner [ js-expander ]">
 
-                        </div>
-                        <div class="card__expander">
-                        <i class="fa fa-close [ js-collapser ]"></i>
-
-                        </div>
-                    </div>
-
-                    <div class=" card [ is-collapsed ] " id="tab-2">
-                        <div class="card__inner [ js-expander ]">
-
-                        </div>
-                        <div class="card__expander">
-                        <i class="fa fa-close [ js-collapser ]"></i>
-
-                        </div>
-                    </div>
-
-                    <div class=" card [ is-collapsed ] " id="tab-3">
-                        <div class="card__inner [ js-expander ]">
-
-                        </div>
-                        <div class="card__expander">
+                            </div>
+                            <div class="card__expander">
                             <i class="fa fa-close [ js-collapser ]"></i>
-                            <ul>
 
-                            </ul>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class=" card [ is-collapsed ] " id="tab-4">
-                        <div class="card__inner [ js-expander ]">
+                        <div class=" card [ is-collapsed ] " id="tab-2">
+                            <div class="card__inner [ js-expander ]">
 
+                            </div>
+                            <div class="card__expander">
+                            <i class="fa fa-close [ js-collapser ]"></i>
+
+                            </div>
                         </div>
-                        <div class="card__expander">
-                        <i class="fa fa-close [ js-collapser ]"></i>
 
+                        <div class=" card [ is-collapsed ] " id="tab-3">
+                            <div class="card__inner [ js-expander ]">
+
+                            </div>
+                            <div class="card__expander">
+                                <i class="fa fa-close [ js-collapser ]"></i>
+                                <ul>
+
+                                </ul>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class=" card [ is-collapsed ] " id="tab-5">
-                        <div class="card__inner [ js-expander ]">
+                        <div class=" card [ is-collapsed ] " id="tab-4">
+                            <div class="card__inner [ js-expander ]">
 
+                            </div>
+                            <div class="card__expander">
+                            <i class="fa fa-close [ js-collapser ]"></i>
+
+                            </div>
                         </div>
-                        <div class="card__expander">
-                        <i class="fa fa-close [ js-collapser ]"></i>
 
+                        <div class=" card [ is-collapsed ] " id="tab-5">
+                            <div class="card__inner [ js-expander ]">
+
+                            </div>
+                            <div class="card__expander">
+                            <i class="fa fa-close [ js-collapser ]"></i>
+
+                            </div>
                         </div>
-                    </div>
 
-                    <div class=" card [ is-collapsed ] " id="tab-6">
-                        <div class="card__inner [ js-expander ]">
+                        <div class=" card [ is-collapsed ] " id="tab-6">
+                            <div class="card__inner [ js-expander ]">
 
+                            </div>
+                            <div class="card__expander">
+                            <i class="fa fa-close [ js-collapser ]"></i>
+
+                            </div>
                         </div>
-                        <div class="card__expander">
-                        <i class="fa fa-close [ js-collapser ]"></i>
 
+                        <div class=" card [ is-collapsed ] " id="tab-7">
+                            <div class="card__inner [ js-expander ]">
+
+                            </div>
+                            <div class="card__expander">
+                            <i class="fa fa-close [ js-collapser ]"></i>
+
+                            </div>
                         </div>
-                    </div>
 
-                    <div class=" card [ is-collapsed ] " id="tab-7">
-                        <div class="card__inner [ js-expander ]">
+                        <div class=" card [ is-collapsed ] " id="tab-8">
+                            <div class="card__inner [ js-expander ]">
 
+                            </div>
+                            <div class="card__expander">
+                            <i class="fa fa-close [ js-collapser ]"></i>
+
+                            </div>
                         </div>
-                        <div class="card__expander">
-                        <i class="fa fa-close [ js-collapser ]"></i>
 
+                        <div class=" card [ is-collapsed ] " id="tab-9">
+                            <div class="card__inner [ js-expander ]">
+
+                            </div>
+                            <div class="card__expander">
+                            <i class="fa fa-close [ js-collapser ]"></i>
+
+                            </div>
                         </div>
-                    </div>
 
-                    <div class=" card [ is-collapsed ] " id="tab-8">
-                        <div class="card__inner [ js-expander ]">
-
-                        </div>
-                        <div class="card__expander">
-                        <i class="fa fa-close [ js-collapser ]"></i>
-
-                        </div>
-                    </div>
-
-                    <div class=" card [ is-collapsed ] " id="tab-9">
-                        <div class="card__inner [ js-expander ]">
-
-                        </div>
-                        <div class="card__expander">
-                        <i class="fa fa-close [ js-collapser ]"></i>
-
-                        </div>
                     </div>
 
                 </div>
-
             </div>
+
         </div>
 
         <div class="modal-bg">
