@@ -45,7 +45,6 @@ class ListApi {
         .then(resp => resp.json())
         .then(json => {
             json[0].categories.forEach(cat => {
-                //debugger
                 let category = new Category({...cat, list})
                 cat.items.forEach(item => {
                     new Item({...item, category})
@@ -53,10 +52,12 @@ class ListApi {
             })
         })
         .catch(this.handleError)
-
+        //debugger
+        User.displayUserAndList(list)
     }
 
     static handleError(error) {
+        //debugger
         flash().innerText = error
         flash().classList.remove("hide")
         setTimeout(() => {

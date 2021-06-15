@@ -25,6 +25,17 @@ ul {
     justify-content: space-between;
 }
 
+.list-flex-box-sidebar {
+    flex-direction: column;
+}
+
+.user-and-lists {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .icon-flex-box {
     display: flex;
     flex-direction: row;
@@ -52,6 +63,7 @@ ul {
 
 #flash {
     background-color: red;
+    color: #fff;
 }
 
 .hide {
