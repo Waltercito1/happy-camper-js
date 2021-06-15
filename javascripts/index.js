@@ -3,9 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ListApi.fetchLists()
     UserApi.fetchUsers()
     buttonShowTempl().addEventListener("click", handleLoadTemplate)
-    
-    // CategoryApi.fetchCategories()
-    // ItemApi.fetchItems()
+
     // buttonNewTempl().addEventListener("click", displayEmptyCatTab)
 })
 
@@ -22,11 +20,11 @@ const handleLoadTemplate = () => {
             catObj.addItems()
             i++
         })
-        handleModal()
+        handleOpenModal()
     }
 }
 
-const handleModal = (categories) => {
+const handleOpenModal = (categories) => {
     modalBg().classList.add('bg-active')
     modalClose().addEventListener('click', handleCloseModal)
     buttonCreateList().addEventListener('click', UserApi.handleUserSubmit)
@@ -36,11 +34,6 @@ const handleCloseModal = () => {
     modalBg().classList.remove('bg-active')
 }
 
-// const handleCreateNewList = (e) => {
-//     ListApi.createNewList
-//     // const userName = document.querySelector("#user-name").value
-//     // debugger
-// }
 
 // const handleLoadTemplate = () => {
 //     Category.all.forEach(catObj => {

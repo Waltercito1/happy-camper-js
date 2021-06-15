@@ -14,19 +14,8 @@ class ListApi {
                     Item.findOrCreateBy({...item, category})
                 })
             })
-            // list.render()
         })
-
         .catch(this.handleError)
-    }
-
-    static handleError(error) {
-        flash().innerText = error
-        flash().classList.remove("hide")
-        setTimeout(() => {
-            flash().innerText = ""
-            flash().classList.add("hide")
-        }, 5000)
     }
 
     static createNewListFromTemplate(user ,e) {
@@ -45,10 +34,35 @@ class ListApi {
         .then(resp => resp.json())
         .then(json => { 
             let newList = new List(json)
-            //debugger 
+            ListApi.fetchListForCategoriesForNewList(newList)
         })
         .catch(this.handleError)
         handleCloseModal()
+    }
+
+    static fetchListForCategoriesForNewList(list) {
+        fetch(this.baseUrl)
+        .then(resp => resp.json())
+        .then(json => {
+            json[0].categories.forEach(cat => {
+                debugger
+                let category = new Category({...cat, list})
+                cat.items.forEach(item => {
+                    new Item({...item, category})
+                })
+            })
+        })
+        .catch(this.handleError)
+        
+    }
+
+    static handleError(error) {
+        flash().innerText = error
+        flash().classList.remove("hide")
+        setTimeout(() => {
+            flash().innerText = ""
+            flash().classList.add("hide")
+        }, 5000)
     }
 
 }

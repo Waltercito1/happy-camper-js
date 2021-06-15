@@ -1,6 +1,5 @@
 class Category {
     static all = []
-
     constructor({name, id, list}) {
         this.name = name
         this.list_id = list.id
@@ -22,6 +21,10 @@ class Category {
 
     static findOrCreateBy(categoryObj) {
         return this.findByName(categoryObj.name) || new Category(categoryObj)
+    }
+
+    static addCategories() {
+        debugger
     }
 
     findItems() {
