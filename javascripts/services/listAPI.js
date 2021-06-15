@@ -29,12 +29,26 @@ class ListApi {
         }, 5000)
     }
 
-    static createNewList(e) {
+    static createNewListFromTemplate(user ,e) {
         e.preventDefault()
-        const data = {
-
+        const listData = {
+            user_id: user.id,
+            title: document.querySelector("#list-name").value
         }
-        debugger
+        fetch(ListApi.baseUrl, {
+            method: 'POST',
+            headers: {
+                "Content-Type": 'application/json'
+            },
+            body: JSON.stringify(listData)
+        })
+        .then(resp => resp.json())
+        .then(json => { 
+            let newList = new List(json)
+            //debugger 
+        })
+        .catch(this.handleError)
+        handleCloseModal()
     }
 
 }

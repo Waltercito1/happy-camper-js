@@ -1,11 +1,13 @@
-class userApi {
+class UserApi {
 
     static baseUrl = `${baseUrl}/users`
 
     static fetchUsers() {
         fetch(this.baseUrl)
         .then(resp => resp.json())
-        .then(resp => {debugger})
+        .then(json => json.forEach(userObj => {
+            User.findOrCreateBy(userObj)
+        }))
 
         .catch(this.handleError)
     }
@@ -19,6 +21,27 @@ class userApi {
         }, 5000)
     }
 
+    static handleUserSubmit(e) {
+        e.preventDefault()
+        const useData = {
+            name: document.querySelector("#user-name").value
+        }
+        fetch(UserApi.baseUrl, {
+            method: 'POST',
+            headers: {
+                "Content-Type": 'application/json'
+            },
+            body: JSON.stringify(useData)
+        })
+        .then(resp => resp.json())
+        .then(json => {
+            let user = User.findOrCreateBy(json)  
+            //debugger
+            ListApi.createNewListFromTemplate(user, e)
+        })
+    }
+
+    
     // static handleDelete(e) {
     //     debugger
     // }

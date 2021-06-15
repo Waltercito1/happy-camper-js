@@ -16,11 +16,11 @@ class User {
     }
  
     static findById(id) {
-         return this.all.find(user => user.id === id)
+        return this.all.find(user => user.id === id)
     }
  
-     static findOrCreateBy(userObj) {
-         return this.findByName(userObj.name) || new User(userObj)
+    static findOrCreateBy(userObj) {
+        return this.findByName(userObj.name) || new User(userObj)
     }
 
 }

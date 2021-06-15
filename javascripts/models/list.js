@@ -15,12 +15,12 @@ class List {
         return this.all.find(function(list) { list.title === title})
     }
  
-     static findById(id) {
-         return this.all.find(list => list.id === id)
+    static findById(id) {
+        return this.all.find(list => list.id === id)
     }
  
-     static findOrCreateBy(listObj) {
-         return this.findByName(listObj.title) || new List(listObj)
+    static findOrCreateBy(listObj) {
+        return this.findByName(listObj.title) || new List(listObj)
     }
 
 }

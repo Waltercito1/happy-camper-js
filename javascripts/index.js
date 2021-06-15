@@ -1,6 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     ListApi.fetchLists()
+    UserApi.fetchUsers()
     buttonShowTempl().addEventListener("click", handleLoadTemplate)
     
     // CategoryApi.fetchCategories()
@@ -28,7 +29,7 @@ const handleLoadTemplate = () => {
 const handleModal = (categories) => {
     modalBg().classList.add('bg-active')
     modalClose().addEventListener('click', handleCloseModal)
-    buttonCreateList().addEventListener('click', ListApi.createNewList)
+    buttonCreateList().addEventListener('click', UserApi.handleUserSubmit)
 }
 
 const handleCloseModal = () => {
