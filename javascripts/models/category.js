@@ -45,9 +45,9 @@ class Category {
                 <div class="list-flex-box" >
                 <div class="icon-hover">${item.name}</div>
                 <div class="icon-flex-box">
-                <div class="icon-spacing"><i class="fas fa-edit icon-hover"></i></div>
-                <div class="icon-spacing"><i class="far fa-trash-alt icon-hover-delete"></i></div>
-                <div class="icon-spacing"><i class="fas fa-check-square checked icon-hover"></i></div>
+                <div class="icon-spacing" id="item-${item.id}"><i class="fas fa-edit icon-hover"></i></div>
+                <div class="icon-spacing" id="item-${item.id}"><i class="far fa-trash-alt icon-hover-delete"></i></div>
+                <div class="icon-spacing" id="item-${item.id}"><i class="fas fa-check-square checked icon-hover"></i></div>
                 </div>
                 </div>
                 `            
@@ -56,9 +56,9 @@ class Category {
                 <div class="list-flex-box" >
                 <div class="icon-hover">${item.name}</div>
                 <div class="icon-flex-box">
-                <div class="icon-spacing"><i class="fas fa-edit icon-hover"></i></div>
-                <div class="icon-spacing"><i class="far fa-trash-alt icon-hover-delete"></i></div>
-                <div class="icon-spacing"><i class="fas fa-check-square icon-hover"></i></div>
+                <div class="icon-spacing" id="item-${item.id}"><i class="fas fa-edit icon-hover"></i></div>
+                <div class="icon-spacing" id="item-${item.id}"><i class="far fa-trash-alt icon-hover-delete"></i></div>
+                <div class="icon-spacing" id="item-${item.id}"><i class="fas fa-check-square icon-hover"></i></div>
                 </div>
                 </div>
                 `
@@ -66,7 +66,8 @@ class Category {
             const categoryDiv = document.querySelector(`#tab-${item.category_id} .card__expander`)
             ul.appendChild(li)
             categoryDiv.appendChild(ul)
-            document.querySelector(`#tab-${item.category_id} .card__expander #item-${item.id} .fa-trash-alt`).addEventListener("click", ItemApi.handleDelete)
             document.querySelector(`#tab-${item.category_id} .card__expander #item-${item.id} .fa-edit`).addEventListener("click", ItemApi.handleUpdate)
+            document.querySelector(`#tab-${item.category_id} .card__expander #item-${item.id} .fa-trash-alt`).addEventListener("click", ItemApi.handleDelete)
+            document.querySelector(`#tab-${item.category_id} .card__expander #item-${item.id} .fa-check-square`).addEventListener("click", ItemApi.handleCheckMark)
         })}
     }

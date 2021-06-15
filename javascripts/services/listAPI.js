@@ -34,7 +34,7 @@ class ListApi {
         .then(resp => resp.json())
         .then(json => { 
             let newList = new List(json)
-            ListApi.fetchListForCategoriesForNewList(newList)
+            this.fetchListForCategoriesForNewList(newList)
         })
         .catch(this.handleError)
         handleCloseModal()
@@ -45,7 +45,7 @@ class ListApi {
         .then(resp => resp.json())
         .then(json => {
             json[0].categories.forEach(cat => {
-                debugger
+                //debugger
                 let category = new Category({...cat, list})
                 cat.items.forEach(item => {
                     new Item({...item, category})
@@ -53,7 +53,7 @@ class ListApi {
             })
         })
         .catch(this.handleError)
-        
+
     }
 
     static handleError(error) {

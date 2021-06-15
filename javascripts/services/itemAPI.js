@@ -20,10 +20,25 @@ class ItemApi {
     }
 
     static handleDelete(e) {
-        debugger
+        const itemId = e.target.parentElement.id
+        document.getElementById(e.target.parentElement.id).remove()
+        
+        // debugger
+
     }
 
     static handleUpdate(e) {
+
+        debugger
+
+    }
+
+    static handleCheckMark(e) {
+        const liId = e.target.parentElement.id
+        const itemId = liId.split('-',2)[1]
+        const checkedItem = Item.findById(parseInt(itemId))
+        //checkedItem
+        document.getElementById(e.target.parentElement.id).classList.add('checked')
         debugger
     }
 
