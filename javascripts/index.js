@@ -24,7 +24,7 @@ const handleLoadTemplate = () => {
     }
 }
 
-const handleOpenModal = (categories) => {
+const handleOpenModal = () => {
     modalBg().classList.add('bg-active')
     modalClose().addEventListener('click', handleCloseModal)
     buttonCreateList().addEventListener('click', UserApi.handleUserSubmit)

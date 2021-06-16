@@ -61,6 +61,10 @@ ul {
     color: #1abc9c;
 }
 
+.checked {
+  color: #1abc9c;
+}
+
 #flash {
     background-color: red;
     color: #fff;

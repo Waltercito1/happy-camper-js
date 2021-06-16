@@ -23,9 +23,9 @@ class User {
         return this.findByName(userObj.name) || new User(userObj)
     }
 
-    static displayUserAndList(list) {
-        const userName = this.all[1].name
-       
+    static displayUserAndList(list, user) {
+        debugger
+        const userName = user.name
         const h2 = document.createElement('h2')
         h2.class = 'user-name'
         h2.innerText = `Welcome ${userName}!`

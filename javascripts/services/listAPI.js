@@ -24,7 +24,7 @@ class ListApi {
             user_id: user.id,
             title: document.querySelector("#list-name").value
         }
-        fetch(ListApi.baseUrl, {
+        fetch(this.baseUrl, {
             method: 'POST',
             headers: {
                 "Content-Type": 'application/json'
@@ -34,13 +34,13 @@ class ListApi {
         .then(resp => resp.json())
         .then(json => { 
             let newList = new List(json)
-            this.fetchListForCategoriesForNewList(newList)
+            this.fetchListForCategoriesForNewList(newList, user)
         })
         .catch(this.handleError)
         handleCloseModal()
     }
 
-    static fetchListForCategoriesForNewList(list) {
+    static fetchListForCategoriesForNewList(list, user) {
         fetch(this.baseUrl)
         .then(resp => resp.json())
         .then(json => {
@@ -52,8 +52,8 @@ class ListApi {
             })
         })
         .catch(this.handleError)
+        User.displayUserAndList(list, user)
         //debugger
-        User.displayUserAndList(list)
     }
 
     static handleError(error) {
