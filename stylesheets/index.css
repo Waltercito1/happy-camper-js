@@ -77,8 +77,9 @@ ul {
 .section {
   font-family: 'Montserrat', sans-serif;
   height: 10%;
-  width: 100vw;
+  width: 60vw;
   padding: 2em;
+  margin: auto;
   margin-top: 1em; 
   border: 3px solid #1d3e35;
   background-color: #949fb0;
@@ -142,6 +143,26 @@ ul {
   cursor: pointer;
 }
 
+/* Sidebar */
+
+.sidebar {
+  height: 200px;
+  width: 150px;
+  position: -webkit-sticky; /* for Safari users */
+  position: sticky;
+  top: 0px;
+  float: none;
+  margin-top: 0px;
+  padding-top: 40px;
+  background-color: lightblue;
+  }
+  
+  .sidebar div {
+  padding: 8px;
+
+  display: block;
+  }
+
 /* nav bar */
 
 #logo-img {
@@ -151,6 +172,10 @@ ul {
 #logo-img img {
   width: 3em;
   height: 3em;
+}
+
+.navbar {
+  position: sticky;
 }
 
 div.navbar-list {
