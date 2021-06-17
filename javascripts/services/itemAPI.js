@@ -38,23 +38,14 @@ class ItemApi {
         const itemId = liId.split('-',2)[1]
         const checkedItem = Item.findById(parseInt(itemId))
         if (checkedItem.packed === false) {
-            debugger
-            // document.getElementById(e.target.parentElement.id).classList.add('checked')
             e.target.parentElement.classList.add('checked')
             checkedItem.packed = true
             checkedItem.update(checkedItem)
         } else {
-            debugger
-            // document.getElementById(e.target.parentElement.id).classList.remove('checked')
             e.target.parentElement.classList.remove('checked')
             checkedItem.packed = false
             checkedItem.update(checkedItem)
         }
-
-        // document.querySelector(`#tab-${checkedItem.category_id} .card__expander #item-${checkedItem.id} .fa-edit`).addEventListener("click", ItemApi.handleUpdate)
-        // document.querySelector(`#tab-${checkedItem.category_id} .card__expander #item-${checkedItem.id} .fa-trash-alt`).addEventListener("click", ItemApi.handleDelete)
-        // document.querySelector(`#tab-${checkedItem.category_id} .card__expander #item-${checkedItem.id} .fa-check-square`).addEventListener("click", ItemApi.handleCheckMark)
-        //debugger
     }
 
 }

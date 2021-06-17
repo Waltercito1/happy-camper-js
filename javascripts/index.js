@@ -1,8 +1,10 @@
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
     ListApi.fetchLists()
     UserApi.fetchUsers()
-    buttonShowTempl().addEventListener("click", handleLoadTemplate)
+    buttonShowTempl().addEventListener('click', handleLoadTemplate)
+    buttonShowHowToSection().addEventListener('click', handleShowHotTo)
+    // howToSection().addEventListener('click', handleShowHotTo)
 
     // buttonNewTempl().addEventListener("click", displayEmptyCatTab)
 })
@@ -34,6 +36,14 @@ const handleCloseModal = () => {
     modalBg().classList.remove('bg-active')
 }
 
+const handleShowHotTo = () => {
+    (howToSection().classList.contains('hide')) ? howToSection().classList.remove('hide') : howToSection().classList.add('hide')
+    buttonCloseHowToSection().addEventListener('click', handleCloseHowTo)
+}
+
+const handleCloseHowTo = () => {
+    howToSection().classList.add('hide')
+}
 
 // const handleLoadTemplate = () => {
 //     Category.all.forEach(catObj => {

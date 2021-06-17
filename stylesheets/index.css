@@ -16,7 +16,7 @@ ul {
     border-radius: 15px;
     margin-top: -1px; /* Prevent double borders */
     background-color: #f6f6f6;
-    padding: 12px;
+    /* padding: 12px; */
   }
 
 .list-flex-box {
@@ -74,16 +74,27 @@ ul {
   display: none;
 }
 
-.section {
+.how-to-section {
+  align-content: center;
   font-family: 'Montserrat', sans-serif;
   height: 10%;
   width: 60vw;
   padding: 2em;
   margin: auto;
   margin-top: 1em; 
-  border: 3px solid #1d3e35;
+  border: 1px solid #1d3e35;
   background-color: #949fb0;
   scroll-snap-align: start;
+}
+
+.how-to-section button {
+  background-color: #478386;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 25px;
 }
 
 /* modal */
@@ -146,22 +157,21 @@ ul {
 /* Sidebar */
 
 .sidebar {
-  height: 200px;
-  width: 150px;
-  position: -webkit-sticky; /* for Safari users */
-  position: sticky;
+  position: absolute;
+  align-content: center;
+  height: 500px;
+  width: 250px;
+  background-color: #1abc9c;
   top: 0px;
-  float: none;
-  margin-top: 0px;
+  margin-top: 30%;
+  margin-top: 6.5vh;
   padding-top: 40px;
-  background-color: lightblue;
-  }
+}
   
-  .sidebar div {
+.sidebar div {
   padding: 8px;
-
   display: block;
-  }
+}
 
 /* nav bar */
 
@@ -175,7 +185,7 @@ ul {
 }
 
 .navbar {
-  position: sticky;
+  position: relative;
 }
 
 div.navbar-list {
@@ -278,7 +288,6 @@ body {
   background-color: #949fb0;
   color: #eceef1;
   font-size: 1.5em;
-  /* text-transform: uppercase; */
   text-align: center;
   transition: all 0.2s ease-in-out;
 }
@@ -294,15 +303,17 @@ body {
     background-color: #333a45;
     width: 100%;
     position: relative;
-    /* display: flex; */
-    /* justify-content: center; */
     align-items: center;
-    /* text-transform: uppercase; */
     color: #00040a;
     font-size: 1em;
     padding: 25px 10px 10px 10px;
     box-sizing: border-box;
 }
+
+.card__expander ul li {
+  padding: 12px;
+}
+
 .card__expander .fa {
     font-size: 0.75em;
     color: seashell;
