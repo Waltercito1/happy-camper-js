@@ -28,20 +28,20 @@ class ItemApi {
         item.delete(item)
     }
 
-    static handleUpdate(e) {
-        const liId = e.target.parentElement.id
-        const itemId = liId.split('-',2)[1]
-        const item = Item.findById(parseInt(itemId))
-        e.target.parentElement.parentElement.parentElement.innerHTML = `
-            <div class="icon-hover"><input type="text" name="name" id="item-name" value="${item.name}"></div>
-            <div class="icon-flex-box">
-                <div class="icon-spacing" id="item-${item.id}"><i class="fas fa-save"></i></div>
-            </div>
-            `
-        document.querySelector(`#tab-${item.category_id} .card__expander #item-${item.id} .fa-save`).addEventListener("click", ItemApi.handleUpdatedItem)
-        debugger
+    // static handleUpdate(e) {
+    //     const liId = e.target.parentElement.id
+    //     const itemId = liId.split('-',2)[1]
+    //     const item = Item.findById(parseInt(itemId))
+    //     e.target.parentElement.parentElement.parentElement.innerHTML = `
+    //         <div class="icon-hover"><input type="text" name="name" id="item-name" value="${item.name}"></div>
+    //         <div class="icon-flex-box">
+    //             <div class="icon-spacing" id="item-${item.id}"><i class="fas fa-save"></i></div>
+    //         </div>
+    //         `
+    //     document.querySelector(`#tab-${item.category_id} .card__expander #item-${item.id} .fa-save`).addEventListener("click", ItemApi.handleUpdatedItem)
+    //     debugger
 
-    }
+    // }
 
     static handleCheckMark(e) {
         const liId = e.target.parentElement.id
@@ -58,9 +58,9 @@ class ItemApi {
         }
     }
 
-    static handleUpdatedItem(e) {
-        e.preventDefault()
-        debugger
-    }
+    // static handleUpdatedItem(e) {
+    //     e.preventDefault()
+    //     debugger
+    // }
 
 }
