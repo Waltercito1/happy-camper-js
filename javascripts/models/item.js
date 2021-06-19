@@ -33,6 +33,5 @@ class Item {
         if (index > -1) {
             Item.all.splice(index, 1)
         }
-        //debugger
     }
 }
