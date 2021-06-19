@@ -36,7 +36,7 @@ class UserApi {
         .then(resp => resp.json())
         .then(json => {
             let user = User.findOrCreateBy(json)  
-            debugger
+            //debugger
             ListApi.createNewListFromTemplate(user, e)
         })
     }

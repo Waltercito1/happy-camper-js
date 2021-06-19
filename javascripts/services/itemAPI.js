@@ -20,11 +20,12 @@ class ItemApi {
     }
 
     static handleDelete(e) {
-        const itemId = e.target.parentElement.id
+        const liId = e.target.parentElement.id
+        const itemId = liId.split('-',2)[1]
         document.getElementById(e.target.parentElement.id).remove()
-        
-        // debugger
-
+        const item = Item.findById(parseInt(itemId))
+        debugger
+        item.delete(item)
     }
 
     static handleUpdate(e) {

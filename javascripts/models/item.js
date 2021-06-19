@@ -27,4 +27,12 @@ class Item {
         currentItem.packed = packed
         return currentItem
     }
+
+    delete(item) {
+        let index = Item.all.indexOf(item)
+        if (index > -1) {
+            Item.all.splice(index, 1)
+        }
+        //debugger
+    }
 }

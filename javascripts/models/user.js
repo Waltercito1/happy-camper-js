@@ -30,6 +30,7 @@ class User {
         h2.class = 'welcome-user-name'
         h2.innerText = `Welcome ${userName}!`
         userAndListsDiv().appendChild(h2)
+        sideBarSection().classList.remove('hide')
         const ul = document.createElement('ul')
         ul.class = 'user-lists'
         const li = document.createElement('li')

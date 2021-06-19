@@ -23,4 +23,8 @@ class List {
         return this.findByName(listObj.title) || new List(listObj)
     }
 
+    findCategories() {
+        return Category.all.filter(cat => this.id === cat.list_id)
+    }
+
 }
