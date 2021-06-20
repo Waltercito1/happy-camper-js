@@ -62,6 +62,25 @@ class ListApi {
         //     cat.findItems()
         // })
         debugger
+        const data = {
+            id: e.target.parentElement.parentElement.parentElement.id,
+            title: currentList.title,
+            categories: currentCats,
+        }
+
+        fetch(`http://localhost:3000/lists/${data.id}`, {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(resp => resp.json())
+        .then(json => {
+            debugger
+        })
+        .catch(err => alert(err))
+
     }
 
     static handleError(error) {
