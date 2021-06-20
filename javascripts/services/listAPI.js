@@ -6,7 +6,6 @@ class ListApi {
         fetch(this.baseUrl)
         .then(resp => resp.json())
         .then(json => {
-            //debugger
             let list = List.findOrCreateBy(json[0])
             json[0].categories.forEach(cat => {
                 let category = Category.findOrCreateBy({...cat, list})
@@ -53,11 +52,16 @@ class ListApi {
         })
         .catch(this.handleError)
         User.displayUserAndList(list, user)
-        //debugger
+    }
+
+    static handleSaveList(e) {
+        const listId = e.target.parentElement.parentElement.parentElement.id
+        const currentList = List.findById(parseInt(listId))
+        const currentCats = currentList.findCategories()
+        debugger
     }
 
     static handleError(error) {
-        //debugger
         flash().innerText = error
         flash().classList.remove("hide")
         setTimeout(() => {

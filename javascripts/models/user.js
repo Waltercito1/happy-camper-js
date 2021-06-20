@@ -24,7 +24,6 @@ class User {
     }
 
     static displayUserAndList(list, user) {
-        //debugger
         const userName = user.name
         const h2 = document.createElement('h2')
         h2.class = 'welcome-user-name'
@@ -35,14 +34,21 @@ class User {
         ul.class = 'user-lists'
         const li = document.createElement('li')
         li.class = 'current-list'
-        li.id = `list-${list.id}`
+        li.id = `${list.id}`
         li.innerHTML = `
                 <div class="user-list-flex-box" >
-                <div class="icon-hover"><a href="#" id="list-name">${list.title}</a></div>
+                <div class="icon-hover"><a href="#" id="${list.id}">${list.title}</a></div>
+                    <div class="button-save-list">
+                    <button class="save-list">Save</button>
+                    </div>
                 </div>
                `
         ul.appendChild(li)
         ulListsDiv().appendChild(ul)
+        //debugger
+        document.querySelector(".save-list").addEventListener('click', ListApi.handleSaveList)
     }
+
+    
 
 }

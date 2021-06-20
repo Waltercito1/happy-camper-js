@@ -67,8 +67,8 @@ class Category {
             ul.appendChild(li)
             categoryDiv.appendChild(ul)
 
-            document.querySelector(`#tab-${item.category_id} .card__expander #item-${item.id} .fa-edit`).addEventListener("click", Item.handleUpdate)
-            document.querySelector(`#tab-${item.category_id} .card__expander #item-${item.id} .fa-trash-alt`).addEventListener("click", Item.handleDelete)
-            document.querySelector(`#tab-${item.category_id} .card__expander #item-${item.id} .fa-check-square`).addEventListener("click", Item.handleCheckMark)
+            document.querySelector(`#tab-${item.category_id} .card__expander #item-${item.id} .fa-edit`).addEventListener('click', Item.handleUpdate)
+            document.querySelector(`#tab-${item.category_id} .card__expander #item-${item.id} .fa-trash-alt`).addEventListener('click', Item.handleDelete)
+            document.querySelector(`#tab-${item.category_id} .card__expander #item-${item.id} .fa-check-square`).addEventListener('click', Item.handleCheckMark)
         })}
     }

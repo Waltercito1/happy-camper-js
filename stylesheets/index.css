@@ -163,8 +163,8 @@ ul {
   width: 250px;
   background-color: #1abc9c;
   top: 0px;
-  margin-top: 30%;
-  margin-top: 6.5vh;
+  /* margin-top: 30%; */
+  margin-top: 10vh;
   padding-top: 40px;
 }
   

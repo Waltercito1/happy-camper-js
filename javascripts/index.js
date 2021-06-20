@@ -3,8 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ListApi.fetchLists()
     UserApi.fetchUsers()
     buttonShowTempl().addEventListener('click', handleLoadTemplate)
-    buttonShowHowToSection().addEventListener('click', handleShowHotTo)
-    // howToSection().addEventListener('click', handleShowHotTo)
+    buttonShowHowToSection().addEventListener('click', handleShowHowTo)
 
     // buttonNewTempl().addEventListener("click", displayEmptyCatTab)
 })
@@ -36,7 +35,7 @@ const handleCloseModal = () => {
     modalBg().classList.remove('bg-active')
 }
 
-const handleShowHotTo = () => {
+const handleShowHowTo = () => {
     (howToSection().classList.contains('hide')) ? howToSection().classList.remove('hide') : howToSection().classList.add('hide')
     buttonCloseHowToSection().addEventListener('click', handleCloseHowTo)
 }
@@ -44,26 +43,4 @@ const handleShowHotTo = () => {
 const handleCloseHowTo = () => {
     howToSection().classList.add('hide')
 }
-
-// const handleLoadTemplate = () => {
-//     Category.all.forEach(catObj => {
-//         const categTab = document.createElement('div')
-//         categTab.classList.add( 'card', '[', 'is-collapsed', ']')
-//         categTab.innerHTML = `
-//             <div class="card__inner [ js-expander ]">
-//                 <span>${catObj.name}</span>
-//             <i class="fa fa-folder-o"></i>
-//             </div>
-//             <div class="card__expander">
-//             <i class="fa fa-close [ js-collapser ]"></i>
-//                 <ul id="packingItem">
-//                     <li id="item">Tent</li>
-//                 </ul>
-//             </div>
-//         `
-//         mainCardsDiv().appendChild(categTab)
-//     })
-//     addItems()
-// }
-
 

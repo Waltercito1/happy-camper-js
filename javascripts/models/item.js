@@ -5,6 +5,7 @@ class Item {
         this.name = name
         this.packed = packed
         this.category_id = category.id
+        this.list_id = category.list_id     //test
         this.id = id
         Item.all.push(this)
     }
