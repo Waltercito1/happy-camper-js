@@ -43,6 +43,29 @@ class Item {
         item.replaceElement(e.target.parentElement)
     }
 
+    static handleDelete(e) {
+        const liId = e.target.parentElement.id
+        const itemId = liId.split('-',2)[1]
+        document.getElementById(e.target.parentElement.id).remove()
+        const item = Item.findById(parseInt(itemId))
+        item.delete(item)
+    }
+
+    static handleCheckMark(e) {
+        const liId = e.target.parentElement.id
+        const itemId = liId.split('-',2)[1]
+        const checkedItem = Item.findById(parseInt(itemId))
+        if (checkedItem.packed === false) {
+            e.target.parentElement.classList.add('checked')
+            checkedItem.packed = true
+            checkedItem.update(checkedItem)
+        } else {
+            e.target.parentElement.classList.remove('checked')
+            checkedItem.packed = false
+            checkedItem.update(checkedItem)
+        }
+    }
+
     update({name, packed}) {
         let currentItem = Item.findById(this.id)
         currentItem.name = name
@@ -50,23 +73,32 @@ class Item {
         return currentItem
     }
 
-    delete(item) {
-        let index = Item.all.indexOf(item)
-        if (index > -1) {
-            Item.all.splice(index, 1)
-        }
-    }
-
     replaceElement(div) {
-        debugger
-        div.parentElement.parentElement.innerHTML = `
+        if (this.packed === true) {
+            div.parentElement.parentElement.innerHTML = `
             <div class="icon-hover">${this.name}</div>
             <div class="icon-flex-box">
             <div class="icon-spacing" id="item-${this.id}"><i class="fas fa-edit icon-hover"></i></div>
             <div class="icon-spacing" id="item-${this.id}"><i class="far fa-trash-alt icon-hover-delete"></i></div>
             <div class="icon-spacing" id="item-${this.id}"><i class="fas fa-check-square checked icon-hover"></i></div>
             </div>
-        `
-    }    
-
+            `
+        } else {
+            div.parentElement.parentElement.innerHTML = `
+            <div class="icon-hover">${this.name}</div>
+            <div class="icon-flex-box">
+            <div class="icon-spacing" id="item-${this.id}"><i class="fas fa-edit icon-hover"></i></div>
+            <div class="icon-spacing" id="item-${this.id}"><i class="far fa-trash-alt icon-hover-delete"></i></div>
+            <div class="icon-spacing" id="item-${this.id}"><i class="fas fa-check-square icon-hover"></i></div>
+            </div>
+            `
+        }
+    }
+    
+    delete(item) {
+        let index = Item.all.indexOf(item)
+        if (index > -1) {
+            Item.all.splice(index, 1)
+        }
+    }
 }
