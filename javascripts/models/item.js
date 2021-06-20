@@ -15,7 +15,7 @@ class Item {
     }
 
     static findById(id) {
-        return this.all.find(item => item.id === id)
+        return this.all.find(item => (item.id === id) && (item.list_id === List.all[1].id))
     }
 
     static findOrCreateBy(itemObj) {
@@ -84,6 +84,9 @@ class Item {
             <div class="icon-spacing" id="item-${this.id}"><i class="fas fa-check-square checked icon-hover"></i></div>
             </div>
             `
+            document.querySelector(`#tab-${this.category_id} .card__expander #item-${this.id} .fa-edit`).addEventListener('click', Item.handleUpdate)
+            document.querySelector(`#tab-${this.category_id} .card__expander #item-${this.id} .fa-trash-alt`).addEventListener('click', Item.handleDelete)
+            document.querySelector(`#tab-${this.category_id} .card__expander #item-${this.id} .fa-check-square`).addEventListener('click', Item.handleCheckMark)
         } else {
             div.parentElement.parentElement.innerHTML = `
             <div class="icon-hover">${this.name}</div>
@@ -93,6 +96,9 @@ class Item {
             <div class="icon-spacing" id="item-${this.id}"><i class="fas fa-check-square icon-hover"></i></div>
             </div>
             `
+            document.querySelector(`#tab-${this.category_id} .card__expander #item-${this.id} .fa-edit`).addEventListener('click', Item.handleUpdate)
+            document.querySelector(`#tab-${this.category_id} .card__expander #item-${this.id} .fa-trash-alt`).addEventListener('click', Item.handleDelete)
+            document.querySelector(`#tab-${this.category_id} .card__expander #item-${this.id} .fa-check-square`).addEventListener('click', Item.handleCheckMark)
         }
     }
     

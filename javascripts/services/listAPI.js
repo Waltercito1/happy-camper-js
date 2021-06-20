@@ -58,6 +58,9 @@ class ListApi {
         const listId = e.target.parentElement.parentElement.parentElement.id
         const currentList = List.findById(parseInt(listId))
         const currentCats = currentList.findCategories()
+        // const currentItems = currentCats.forEach(cat => {
+        //     cat.findItems()
+        // })
         debugger
     }
 

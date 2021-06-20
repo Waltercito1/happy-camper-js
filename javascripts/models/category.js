@@ -23,12 +23,10 @@ class Category {
         return this.findByName(categoryObj.name) || new Category(categoryObj)
     }
 
-    static addCategories() {
-        debugger
-    }
-
     findItems() {
-        return Item.all.filter(item => this.id === item.category_id)
+        //debugger
+        // return Item.all.filter(item => this.id === item.category_id)
+        return Item.all.filter(item => (this.id === item.category_id) && (this.list_id === item.list_id))
     }
 
     addItems() {
