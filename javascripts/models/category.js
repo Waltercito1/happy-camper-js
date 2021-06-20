@@ -30,11 +30,11 @@ class Category {
     addItems() {
         const items = this.findItems()
         const ul = document.createElement('ul')
-        ul.class = 'packing-item'
+        ul.className = 'packing-item'
         
         items.forEach(item => {
             const li = document.createElement('li')
-            li.class = 'item'
+            li.className = 'item'
             li.id = `item-${item.id}`
             if (item.packed === true) {    
                 li.innerHTML = `

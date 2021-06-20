@@ -28,24 +28,28 @@ class List {
     }
 
     static addListsToSidebar(lists) {
-        const h2 = document.createElement('h2')
-        h2.class = 'user-lists-h2'
-        h2.innerText = "Other Lists You've Created"
-        ulAllListsDiv().appendChild(h2)
-        const ul = document.createElement('ul')
-        ul.class = 'all-user-lists'
-        lists.forEach(list => {
-            const li = document.createElement('li')
-            li.id = `${list.id}`
-            li.innerHTML = `
-            <div class="user-list-flex-box" >
-            <div class="icon-hover"><a href="#" id="${list.id}">${list.title}</a></div>
-            </div>
-            `
-            ul.appendChild(li)
-        })
-        ulAllListsDiv().appendChild(ul)
-        debugger
+        const currentListId = parseInt(document.querySelector('.current-list').id)
+        if (lists.length > 1) {
+            const h2 = document.createElement('h2')
+            h2.className = 'user-lists-h2'
+            h2.innerText = "Other Lists You've Created"
+            ulAllListsDiv().appendChild(h2)
+            const ul = document.createElement('ul')
+            ul.className = "all-user-lists"
+            lists.forEach(list => {
+                if (list.id !== currentListId) {      //test
+                const li = document.createElement('li')
+                li.id = `${list.id}`
+                li.innerHTML = `
+                <div class="user-list-flex-box" >
+                <div class="icon-hover"><a href="#" id="${list.id}">${list.title}</a></div>
+                </div>
+                `
+                ul.appendChild(li)
+            }})
+            ulAllListsDiv().appendChild(ul)
+        }
+        //debugger
     }
 
 

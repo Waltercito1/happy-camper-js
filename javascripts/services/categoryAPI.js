@@ -6,7 +6,6 @@ class CategoryApi {
         fetch(this.baseUrl)
         .then(resp => resp.json())
         .then(json => json.forEach(catObj => {
-            debugger
             let cat = Category.findOrCreateBy(catObj)
             cat.render()
         }))

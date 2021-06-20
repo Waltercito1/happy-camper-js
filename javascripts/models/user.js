@@ -26,14 +26,14 @@ class User {
     static displayUserAndList(list, user) {
         const userName = user.name
         const h2 = document.createElement('h2')
-        h2.class = 'welcome-user-name'
+        h2.className = "welcome-user-name"
         h2.innerText = `Welcome ${userName}!`
         userAndListsDiv().appendChild(h2)
         sideBarSection().classList.remove('hide')
         const ul = document.createElement('ul')
-        ul.class = 'user-lists'
+        ul.className = "user-lists"
         const li = document.createElement('li')
-        li.class = 'current-list'
+        li.className = "current-list"
         li.id = `${list.id}`
         li.innerHTML = `
         <div class="user-list-flex-box" >
