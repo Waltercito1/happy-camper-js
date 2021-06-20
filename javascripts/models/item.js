@@ -15,7 +15,7 @@ class Item {
     }
 
     static findById(id) {
-        return this.all.find(item => (item.id === id) && (item.list_id === List.all[1].id))
+        return this.all.find(item => (item.id === id) && (item.list_id === List.all[1].id))  //fix hard coded List
     }
 
     static findOrCreateBy(itemObj) {

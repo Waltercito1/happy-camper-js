@@ -36,19 +36,18 @@ class User {
         li.class = 'current-list'
         li.id = `${list.id}`
         li.innerHTML = `
-                <div class="user-list-flex-box" >
-                <div class="icon-hover"><a href="#" id="${list.id}">${list.title}</a></div>
-                    <div class="button-save-list">
-                    <button class="save-list">Save</button>
-                    </div>
-                </div>
-               `
+        <div class="user-list-flex-box" >
+        <div class="icon-hover"><a href="#" id="${list.id}">${list.title}</a></div>
+        <div class="button-save-list">
+        <button class="save-list">Save</button>
+        </div>
+        </div>
+        `
         ul.appendChild(li)
         ulListsDiv().appendChild(ul)
-        //debugger
-        document.querySelector(".save-list").addEventListener('click', ListApi.handleSaveList)
-    }
 
-    
+        document.querySelector(".save-list").addEventListener('click', ListApi.handleSaveList)
+        UserApi.loadAllUserList(user)
+    }
 
 }

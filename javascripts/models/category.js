@@ -24,8 +24,6 @@ class Category {
     }
 
     findItems() {
-        //debugger
-        // return Item.all.filter(item => this.id === item.category_id)
         return Item.all.filter(item => (this.id === item.category_id) && (this.list_id === item.list_id))
     }
 

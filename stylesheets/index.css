@@ -159,7 +159,7 @@ ul {
 .sidebar {
   position: absolute;
   align-content: center;
-  height: 500px;
+  /* height: 500px; */
   width: 250px;
   background-color: #1abc9c;
   top: 0px;
@@ -171,6 +171,19 @@ ul {
 .sidebar div {
   padding: 8px;
   display: block;
+}
+
+div.user-list-flex-box {
+  display: inline-flex;
+}
+
+div.user-and-lists h2 {
+  text-align: center;
+}
+
+div.all-user-lists h2 {
+  padding-bottom: 10px;
+  text-align: center;
 }
 
 /* nav bar */

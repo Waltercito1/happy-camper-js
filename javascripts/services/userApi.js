@@ -40,6 +40,19 @@ class UserApi {
         })
     }
 
+    static loadAllUserList(user) {
+        debugger
+        fetch(`http://localhost:3000/users/${user.id}`)
+        .then(resp => resp.json())
+        .then(json => List.addListsToSidebar(json.lists)
+        // json.forEach(userObj => {
+        //     User.findOrCreateBy(userObj)
+        // })
+        
+        )
+
+        .catch(this.handleError)
+    }
     
     // static handleDelete(e) {
     //     debugger

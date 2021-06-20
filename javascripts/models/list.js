@@ -27,4 +27,26 @@ class List {
         return Category.all.filter(cat => this.id === cat.list_id)
     }
 
+    static addListsToSidebar(lists) {
+        const h2 = document.createElement('h2')
+        h2.class = 'user-lists-h2'
+        h2.innerText = "Other Lists You've Created"
+        ulAllListsDiv().appendChild(h2)
+        const ul = document.createElement('ul')
+        ul.class = 'all-user-lists'
+        lists.forEach(list => {
+            const li = document.createElement('li')
+            li.id = `${list.id}`
+            li.innerHTML = `
+            <div class="user-list-flex-box" >
+            <div class="icon-hover"><a href="#" id="${list.id}">${list.title}</a></div>
+            </div>
+            `
+            ul.appendChild(li)
+        })
+        ulAllListsDiv().appendChild(ul)
+        debugger
+    }
+
+
 }
