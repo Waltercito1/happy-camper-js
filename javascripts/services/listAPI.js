@@ -43,6 +43,7 @@ class ListApi {
         fetch(this.baseUrl)
         .then(resp => resp.json())
         .then(json => {
+            debugger
             json[0].categories.forEach(cat => {
                 let category = new Category({...cat, list})
                 cat.items.forEach(item => {
@@ -58,16 +59,16 @@ class ListApi {
         const listId = e.target.parentElement.parentElement.parentElement.id
         const currentList = List.findById(parseInt(listId))
         const currentCats = currentList.findCategories()
-        // const currentItems = currentCats.forEach(cat => {
-        //     cat.findItems()
-        // })
-        debugger
+        const currentItems = currentCats.map(cat => {
+            return cat.findItems()
+        })
+
         const data = {
             id: e.target.parentElement.parentElement.parentElement.id,
             title: currentList.title,
-            categories: currentCats,
+            list_items_attributes: currentItems.flat(),
         }
-
+debugger
         fetch(`http://localhost:3000/lists/${data.id}`, {
             method: 'PATCH',
             headers: {
@@ -76,9 +77,8 @@ class ListApi {
             body: JSON.stringify(data)
         })
         .then(resp => resp.json())
-        .then(json => {
-            debugger
-        })
+        .then(json => {debugger})
+
         .catch(err => alert(err))
 
     }

@@ -49,7 +49,6 @@ class List {
             }})
             ulAllListsDiv().appendChild(ul)
         }
-        //debugger
     }
 
 
