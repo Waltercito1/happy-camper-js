@@ -43,7 +43,6 @@ class ListApi {
         fetch(this.baseUrl)
         .then(resp => resp.json())
         .then(json => {
-            // debugger
             json[0].categories.forEach(cat => {
                 let category = new Category({...cat, list})
                 cat.items.forEach(item => {
@@ -52,7 +51,7 @@ class ListApi {
             })
         })
         .catch(this.handleError)
-        //debugger
+
         User.displayUserAndList(list, user)
     }
 
@@ -93,7 +92,6 @@ class ListApi {
                 Category.all.splice(index, 1)
             })
             List.resetItemsInUl()
-            //debugger
             let i = 1
             json.categories.forEach(cat => {
                 let category = new Category({...cat, list})
@@ -104,8 +102,6 @@ class ListApi {
                 i++
             })
             //debugger
-            //List.renderUpdatedList(json)
-            //handleLoadTemplate(json)
         })
 
         .catch(err => alert(err))

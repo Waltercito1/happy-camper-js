@@ -77,7 +77,6 @@ class Item {
 
     replaceElement(div) {
         const tabId = div.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.id
-        debugger
         if (this.packed === true) {
             div.parentElement.parentElement.innerHTML = `
             <div class="icon-hover">${this.name}</div>
