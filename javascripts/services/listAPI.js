@@ -79,7 +79,34 @@ class ListApi {
             body: JSON.stringify(data)
         })
         .then(resp => resp.json())
-        .then(json => {debugger})
+        .then(json => {
+            let list = List.findOrCreateBy(json)
+            
+            let oldCategs = list.findCategories()
+            oldCategs.forEach(oldCat => {
+                let oldItems = oldCat.findItems()
+                oldItems.forEach(oldItem => {
+                    let itemIndex = Item.all.indexOf(oldItem)
+                    Item.all.splice(itemIndex, 1)
+                })
+                let index = Category.all.indexOf(oldCat)
+                Category.all.splice(index, 1)
+            })
+            List.resetItemsInUl()
+            //debugger
+            let i = 1
+            json.categories.forEach(cat => {
+                let category = new Category({...cat, list})
+                cat.items.forEach(item => {
+                    new Item({...item, category})
+                })
+                category.addUpdatedListItems(i)
+                i++
+            })
+            //debugger
+            //List.renderUpdatedList(json)
+            //handleLoadTemplate(json)
+        })
 
         .catch(err => alert(err))
 

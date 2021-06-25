@@ -16,3 +16,9 @@ const howToSection = () => document.querySelector('.how-to-section')
 const buttonCloseHowToSection = () => document.querySelector('.ok-btn')
 const sideBarSection = () => document.querySelector('.sidebar')
 const ulAllListsDiv = () => document.querySelector('.all-user-lists')
+
+const categoryUl = () => document.querySelector("#tab-1").lastElementChild.parentElement
+
+const packingItemUl = () => document.querySelector(".packing-item")
+
+const allThePackingLists = () => document.querySelectorAll('.packing-item')

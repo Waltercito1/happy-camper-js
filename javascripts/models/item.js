@@ -23,6 +23,7 @@ class Item {
     }
 
     static handleUpdate(e) {
+        const tabId = e.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.id
         const liId = e.target.parentElement.id
         const itemId = liId.split('-',2)[1]
         const item = Item.findById(parseInt(itemId))
@@ -32,7 +33,7 @@ class Item {
                 <div class="icon-spacing" id="item-${item.id}"><i class="fas fa-save"></i></div>
             </div>
             `
-        document.querySelector(`#tab-${item.category_id} .card__expander #item-${item.id} .fa-save`).addEventListener("click", Item.handleUpdatedItem)
+        document.querySelector(`#${tabId} .card__expander #item-${item.id} .fa-save`).addEventListener("click", Item.handleUpdatedItem)
     }
 
     static handleUpdatedItem(e) {
@@ -75,6 +76,8 @@ class Item {
     }
 
     replaceElement(div) {
+        const tabId = div.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.id
+        debugger
         if (this.packed === true) {
             div.parentElement.parentElement.innerHTML = `
             <div class="icon-hover">${this.name}</div>
@@ -84,9 +87,9 @@ class Item {
             <div class="icon-spacing" id="item-${this.id}"><i class="fas fa-check-square checked icon-hover"></i></div>
             </div>
             `
-            document.querySelector(`#tab-${this.category_id} .card__expander #item-${this.id} .fa-edit`).addEventListener('click', Item.handleUpdate)
-            document.querySelector(`#tab-${this.category_id} .card__expander #item-${this.id} .fa-trash-alt`).addEventListener('click', Item.handleDelete)
-            document.querySelector(`#tab-${this.category_id} .card__expander #item-${this.id} .fa-check-square`).addEventListener('click', Item.handleCheckMark)
+            document.querySelector(`#${tabId} .card__expander #item-${this.id} .fa-edit`).addEventListener('click', Item.handleUpdate)
+            document.querySelector(`#${tabId} .card__expander #item-${this.id} .fa-trash-alt`).addEventListener('click', Item.handleDelete)
+            document.querySelector(`#${tabId} .card__expander #item-${this.id} .fa-check-square`).addEventListener('click', Item.handleCheckMark)
         } else {
             div.parentElement.parentElement.innerHTML = `
             <div class="icon-hover">${this.name}</div>
@@ -96,9 +99,9 @@ class Item {
             <div class="icon-spacing" id="item-${this.id}"><i class="fas fa-check-square icon-hover"></i></div>
             </div>
             `
-            document.querySelector(`#tab-${this.category_id} .card__expander #item-${this.id} .fa-edit`).addEventListener('click', Item.handleUpdate)
-            document.querySelector(`#tab-${this.category_id} .card__expander #item-${this.id} .fa-trash-alt`).addEventListener('click', Item.handleDelete)
-            document.querySelector(`#tab-${this.category_id} .card__expander #item-${this.id} .fa-check-square`).addEventListener('click', Item.handleCheckMark)
+            document.querySelector(`#${tabId} .card__expander #item-${this.id} .fa-edit`).addEventListener('click', Item.handleUpdate)
+            document.querySelector(`#${tabId} .card__expander #item-${this.id} .fa-trash-alt`).addEventListener('click', Item.handleDelete)
+            document.querySelector(`#${tabId} .card__expander #item-${this.id} .fa-check-square`).addEventListener('click', Item.handleCheckMark)
         }
     }
     

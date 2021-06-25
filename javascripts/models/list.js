@@ -51,5 +51,58 @@ class List {
         }
     }
 
+    static renderUpdatedList(updatedList) {
+        this.resetItemsInUl()
+        let i = 1
+        // const categoryUl = document.querySelector(".packing-item")
+        const categoryUl = document.querySelector(`#tab-${i} .card__inner`).parentElement.lastElementChild.lastElementChild
+        updatedList.categories.forEach(category => {
+            category.items.forEach(item => {
+                //debugger
+                const li = document.createElement('li')
+                li.className = 'item'
+                li.id = `item-${item.id}`
+                if (item.packed === true) {    
+                    li.innerHTML = `
+                    <div class="list-flex-box" >
+                    <div class="icon-hover">${item.name}</div>
+                    <div class="icon-flex-box">
+                    <div class="icon-spacing" id="item-${item.id}"><i class="fas fa-edit icon-hover"></i></div>
+                    <div class="icon-spacing" id="item-${item.id}"><i class="far fa-trash-alt icon-hover-delete"></i></div>
+                    <div class="icon-spacing" id="item-${item.id}"><i class="fas fa-check-square checked icon-hover"></i></div>
+                    </div>
+                    </div>
+                    `            
+                } else {
+                    li.innerHTML = `
+                    <div class="list-flex-box" >
+                    <div class="icon-hover">${item.name}</div>
+                    <div class="icon-flex-box">
+                    <div class="icon-spacing" id="item-${item.id}"><i class="fas fa-edit icon-hover"></i></div>
+                    <div class="icon-spacing" id="item-${item.id}"><i class="far fa-trash-alt icon-hover-delete"></i></div>
+                    <div class="icon-spacing" id="item-${item.id}"><i class="fas fa-check-square icon-hover"></i></div>
+                    </div>
+                    </div>
+                    `
+                }
+                const categoryDiv = document.querySelector(`#tab-${i} .card__expander`)
+                categoryUl.appendChild(li)
+                categoryDiv.appendChild(categoryUl)
+    
+                document.querySelector(`#tab-${i} .card__expander #item-${item.id} .fa-edit`).addEventListener('click', Item.handleUpdate)
+                document.querySelector(`#tab-${i} .card__expander #item-${item.id} .fa-trash-alt`).addEventListener('click', Item.handleDelete)
+                document.querySelector(`#tab-${i} .card__expander #item-${item.id} .fa-check-square`).addEventListener('click', Item.handleCheckMark)
+            })
+            i++
+        })
 
+        
+    }
+
+    static resetItemsInUl() {
+        allThePackingLists().forEach(list => {
+            while (list.firstChild) 
+            list.removeChild(list.lastChild)    
+        })
+    }
 }
