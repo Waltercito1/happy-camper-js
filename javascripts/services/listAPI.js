@@ -91,6 +91,8 @@ class ListApi {
                 let index = Category.all.indexOf(oldCat)
                 Category.all.splice(index, 1)
             })
+            debugger
+            alert("List Successfully Saved!")
             List.resetItemsInUl()
             let i = 1
             json.categories.forEach(cat => {

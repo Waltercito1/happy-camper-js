@@ -97,7 +97,25 @@ ul {
   padding: 10px 25px;
 }
 
+#how-to div {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}
 
+#how-to-title {
+  padding-bottom: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+#how-to p {
+  padding: 0px 0px 10px 25px;
+}
+
+#new-list {
+  opacity: 50%;
+}
 
 /* modal */
 

@@ -50,5 +50,11 @@ class List {
             ulAllListsDiv().appendChild(ul)
         }
     }
-    
+
+    static resetItemsInUl() {
+        allThePackingLists().forEach(list => {
+            while (list.firstChild) 
+            list.removeChild(list.lastChild)    
+        })
+    }
 }

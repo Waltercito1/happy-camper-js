@@ -1,5 +1,6 @@
 const baseUrl = "http://localhost:3000"
-const buttonShowTempl = () => document.querySelector("#template")
+const buttonShowTempl = () => document.querySelector('#template')
+const buttonStartNewList = () => document.querySelector('#new-list')
 const ul = () => document.getElementById("packingItem")
 
 const mainCardsDiv = () => document.querySelector(".cards")
@@ -17,8 +18,7 @@ const buttonCloseHowToSection = () => document.querySelector('.ok-btn')
 const sideBarSection = () => document.querySelector('.sidebar')
 const ulAllListsDiv = () => document.querySelector('.all-user-lists')
 
-const categoryUl = () => document.querySelector("#tab-1").lastElementChild.parentElement
-
-const packingItemUl = () => document.querySelector(".packing-item")
+//const categoryUl = () => document.querySelector("#tab-1").lastElementChild.parentElement
+//const packingItemUl = () => document.querySelector(".packing-item")
 
 const allThePackingLists = () => document.querySelectorAll('.packing-item')
