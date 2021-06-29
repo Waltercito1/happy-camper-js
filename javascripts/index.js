@@ -47,9 +47,10 @@ const handleCloseHowTo = () => {
 
 const sortList = (e) => {
     e.stopPropagation()
+    const currentList = List.findById(parseInt(document.querySelector('.current-list').id))
     const tabId = e.target.parentElement.parentElement.parentElement.id
     const categId = parseInt(tabId.split('-',2)[1])
-    const currentCategory = Category.findById(categId)
+    const currentCategory = currentList.findCategories().find(Category => Category.id === categId)
     const items = currentCategory.findItems()
     items.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
     
