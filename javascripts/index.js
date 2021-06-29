@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     buttonShowTempl().addEventListener('click', handleLoadTemplate)
     buttonShowHowToSection().addEventListener('click', handleShowHowTo)
 
+    //(cardTab().classList.contains('is-expanded')) ? (document.querySelector(".sortingBttn").classList.remove('hide')) : (document.querySelector(".sortingBttn").classList.add('hide'))
+    
     // buttonNewTempl().addEventListener("click", displayEmptyCatTab)
 })
 
@@ -16,7 +18,7 @@ const handleLoadTemplate = () => {
             span.className = "category-name"
             span.innerHTML = `${catObj.name}
             <i class="fa fa-folder-o"></i>
-            <button class="sortingBttn ">Sort items by name</button>
+            <button class="sortingBttn">Sort items by name</button>
             `
             document.querySelector(`#tab-${i} .card__inner`).appendChild(span)
             catObj.addItems()
@@ -54,9 +56,10 @@ const sortList = (e) => {
     const items = currentCategory.findItems()
     items.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
     
-    const listItemsInUl = () => document.querySelector(`#tab-${categId} > div.card__expander > ul`)
+    const listItemsInUl = () => document.querySelector(`#tab-${categId} > div.card__expander > ul.packing-item`)
 
     currentCategory.removeLisFromUl(listItemsInUl)
+
     reAppendSortedLis(items, listItemsInUl, categId)
 }
 

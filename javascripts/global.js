@@ -21,3 +21,5 @@ const ulAllListsDiv = () => document.querySelector('.all-user-lists')
 const allThePackingLists = () => document.querySelectorAll('.packing-item')
 
 const buttonSort = () => document.querySelector("#tab-1 > div.card__inner.\\[.js-expander.\\] > span > button")
+
+const cardTab = () => document.querySelector(".card")
