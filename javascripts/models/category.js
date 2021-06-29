@@ -67,43 +67,50 @@ class Category {
             document.querySelector(`#tab-${item.category_id} .card__expander #item-${item.id} .fa-edit`).addEventListener('click', Item.handleUpdate)
             document.querySelector(`#tab-${item.category_id} .card__expander #item-${item.id} .fa-trash-alt`).addEventListener('click', Item.handleDelete)
             document.querySelector(`#tab-${item.category_id} .card__expander #item-${item.id} .fa-check-square`).addEventListener('click', Item.handleCheckMark)
-        })}
-        
-        addUpdatedListItems(i) {
-            const items = this.findItems()
-            const ulLis = document.querySelector(`#tab-${i} div.card__expander ul`)
-            items.forEach(item => {
-                const li = document.createElement('li')
-            li.className = 'item'
-            li.id = `item-${item.id}`
-            if (item.packed === true) {    
-                li.innerHTML = `
-                <div class="list-flex-box" >
-                <div class="icon-hover">${item.name}</div>
-                <div class="icon-flex-box">
-                <div class="icon-spacing" id="item-${item.id}"><i class="fas fa-edit icon-hover"></i></div>
-                <div class="icon-spacing" id="item-${item.id}"><i class="far fa-trash-alt icon-hover-delete"></i></div>
-                <div class="icon-spacing" id="item-${item.id}"><i class="fas fa-check-square checked icon-hover"></i></div>
-                </div>
-                </div>
-                `            
-            } else {
-                li.innerHTML = `
-                <div class="list-flex-box" >
-                <div class="icon-hover">${item.name}</div>
-                <div class="icon-flex-box">
-                <div class="icon-spacing" id="item-${item.id}"><i class="fas fa-edit icon-hover"></i></div>
-                <div class="icon-spacing" id="item-${item.id}"><i class="far fa-trash-alt icon-hover-delete"></i></div>
-                <div class="icon-spacing" id="item-${item.id}"><i class="fas fa-check-square icon-hover"></i></div>
-                </div>
-                </div>
-                `
-            }
-            ulLis.appendChild(li)
-
-            document.querySelector(`#tab-${i} .card__expander #item-${item.id} .fa-edit`).addEventListener('click', Item.handleUpdate)
-            document.querySelector(`#tab-${i} .card__expander #item-${item.id} .fa-trash-alt`).addEventListener('click', Item.handleDelete)
-            document.querySelector(`#tab-${i} .card__expander #item-${item.id} .fa-check-square`).addEventListener('click', Item.handleCheckMark)
-        })}
-
+        })
+        document.querySelector(`#tab-${this.id} > div.card__inner.\\[.js-expander.\\] > span > button`).addEventListener('click', sortList)
     }
+        
+    addUpdatedListItems(i) {
+        const items = this.findItems()
+        const ulLis = document.querySelector(`#tab-${i} div.card__expander ul`)
+        items.forEach(item => {
+            const li = document.createElement('li')
+        li.className = 'item'
+        li.id = `item-${item.id}`
+        if (item.packed === true) {    
+            li.innerHTML = `
+            <div class="list-flex-box" >
+            <div class="icon-hover">${item.name}</div>
+            <div class="icon-flex-box">
+            <div class="icon-spacing" id="item-${item.id}"><i class="fas fa-edit icon-hover"></i></div>
+            <div class="icon-spacing" id="item-${item.id}"><i class="far fa-trash-alt icon-hover-delete"></i></div>
+            <div class="icon-spacing" id="item-${item.id}"><i class="fas fa-check-square checked icon-hover"></i></div>
+            </div>
+            </div>
+            `            
+        } else {
+            li.innerHTML = `
+            <div class="list-flex-box" >
+            <div class="icon-hover">${item.name}</div>
+            <div class="icon-flex-box">
+            <div class="icon-spacing" id="item-${item.id}"><i class="fas fa-edit icon-hover"></i></div>
+            <div class="icon-spacing" id="item-${item.id}"><i class="far fa-trash-alt icon-hover-delete"></i></div>
+            <div class="icon-spacing" id="item-${item.id}"><i class="fas fa-check-square icon-hover"></i></div>
+            </div>
+            </div>
+            `
+        }
+        ulLis.appendChild(li)
+
+        document.querySelector(`#tab-${i} .card__expander #item-${item.id} .fa-edit`).addEventListener('click', Item.handleUpdate)
+        document.querySelector(`#tab-${i} .card__expander #item-${item.id} .fa-trash-alt`).addEventListener('click', Item.handleDelete)
+        document.querySelector(`#tab-${i} .card__expander #item-${item.id} .fa-check-square`).addEventListener('click', Item.handleCheckMark)
+    })}
+
+    removeLisFromUl(listItemsInUl) {
+        while (listItemsInUl().firstChild) 
+        listItemsInUl().removeChild(listItemsInUl().lastChild)
+    }
+
+}
