@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     UserApi.fetchUsers()
     buttonShowTempl().addEventListener('click', handleLoadTemplate)
     buttonShowHowToSection().addEventListener('click', handleShowHowTo)
-
-    //(cardTab().classList.contains('is-expanded')) ? (document.querySelector(".sortingBttn").classList.remove('hide')) : (document.querySelector(".sortingBttn").classList.add('hide'))
     
     // buttonNewTempl().addEventListener("click", displayEmptyCatTab)
 })
@@ -18,7 +16,7 @@ const handleLoadTemplate = () => {
             span.className = "category-name"
             span.innerHTML = `${catObj.name}
             <i class="fa fa-folder-o"></i>
-            <button class="sortingBttn">Sort items by name</button>
+            <button class="sortingBttn hide">Sort items by name</button>
             `
             document.querySelector(`#tab-${i} .card__inner`).appendChild(span)
             catObj.addItems()
