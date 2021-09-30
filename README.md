@@ -1,7 +1,7 @@
 # The Happy Camper's List
 JavaScript Single Page Application - Fourth portfolio project for Flatiron (102020 - ONL - SE - PT)
 
-Welcome to The Happy Camper's List. This app allows the users to get the packing planing organized prior to a camping trip. It allows the user to Read, Update, and Deleted list items ('Create' coming soon'). 
+Welcome to The Happy Camper's List. This app allows the users to get the packing planning organized prior to a camping trip. It allows the user to Read, Update, and Deleted list items ('Create' coming soon'). 
 
 ## Installation
 You can install this application by running 
