@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     UserApi.fetchUsers()
     buttonShowTempl().addEventListener('click', handleLoadTemplate)
     buttonShowHowToSection().addEventListener('click', handleShowHowTo)
-    
     // buttonNewTempl().addEventListener("click", displayEmptyCatTab)
 })
 

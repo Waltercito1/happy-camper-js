@@ -16,7 +16,6 @@ ul {
     border-radius: 15px;
     margin-top: -1px; /* Prevent double borders */
     background-color: #f6f6f6;
-    /* padding: 12px; */
   }
 
 .list-flex-box {
@@ -179,11 +178,9 @@ ul {
 .sidebar {
   position: absolute;
   align-content: center;
-  /* height: 500px; */
   width: 250px;
   background-color: #1abc9c;
   top: 0px;
-  /* margin-top: 30%; */
   margin-top: 10vh;
   padding-top: 40px;
 }
@@ -226,7 +223,6 @@ div.navbar-list {
   margin: 0;
   padding: 5px 10px;
   overflow: hidden;
-  /* height: 50px; */
   background-color: #1d3e35;
 }
 
